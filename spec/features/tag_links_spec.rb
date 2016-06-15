@@ -7,6 +7,7 @@ feature 'add tags' do
     click_button 'Submit'
 
     link = Link.first
+    link.tags.map {|obj| object.name }
     expect(link.tags.map(&:name)).to include('greetings')
   end
 end
