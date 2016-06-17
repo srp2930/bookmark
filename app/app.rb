@@ -1,8 +1,6 @@
 ENV["RACK_ENV"] ||= "development"
 
 require 'sinatra/base'
-require_relative './lib/link'
-require_relative './lib/tag'
 require_relative 'data_mapper_setup'
 require 'sinatra/flash'
 
@@ -11,7 +9,6 @@ class BookmarkManager < Sinatra::Base
 
   enable :sessions
   set :session_secret, 'super secret'
-
 
   get '/' do
   	"Hello!"
